@@ -1,0 +1,47 @@
+.test{
+    background-color: blue;
+}
+
+.test2{
+    background-color: red;
+}
+.typemd{
+ width: 30ch;
+ text-wrap: nowrap;
+ overflow: hidden;
+ animation: typing 3s steps(25)  ;
+}
+.typd{
+ width: 20ch;
+ text-wrap: nowrap;
+ overflow: hidden;
+ animation: typing 8s steps(20) infinite alternate-reverse;
+}
+@keyframes typing {
+    from{
+        width: 0ch;
+    }
+}
+@import "tailwindcss";
+
+html{
+    scroll-behavior:smooth;
+}
+.dis{
+    display: none;
+}
+
+.apia{
+    display: flex;
+}
+body{
+    background-color: #1A2517;
+}
+
+.hw{
+  height: 315px;
+  width: auto;
+}
+.font1{
+    font-size: large;
+}

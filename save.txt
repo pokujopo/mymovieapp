@@ -1,0 +1,11 @@
+
+    <NavBar />
+    <Introduction />
+    <Project />
+    <Myskills />
+    <Contact />
+    <Footer />
+    
+    import React from 'react';
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa'; // Example icons
+// You can also import from other libraries, e.g., import { IoLogoGithub } from 'react-icons/io';
