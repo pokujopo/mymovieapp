@@ -1,32 +1,45 @@
-import { createBrowserRouter } from "react-router-dom";
-//import Home from '../pages/Home.jsx'
-import Post_project from '../pages/Post_project.jsx';
-import Project_page from "../pages/Project_page";
+import { createHashRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
+
 const Home = lazy(() => import("../pages/Home"));
 const Layout = lazy(() => import("../layout/Layout"));
-//const Project_page = lazy(() => import("../pages/Project_page"))
+const Post_project = lazy(() => import("../pages/Post_project"));
+const Project_page = lazy(() => import("../pages/Project_page"));
 
-
-const repoName = import.meta.env.VITE_REPO_NAME || "";
-    
-    export const router = createBrowserRouter(
-  [
-    { 
-      path: `/`, element: (<Layout />),
-      children: [
-        {
-          path: "/",
-          element: <Home></Home>,
-        },
-        
-      
-      ]
-       },
-    { path: `/post_project`, element: (<Post_project />) },
-    { path: `/project`, element: (<Project_page />)}
-  ],  
-  { basename: `/${repoName}` }
-)
-
-
+// Hakuna dependency kwenye repo name, HashRouter haita use basename
+export const router = createHashRouter([
+  {
+    path: "/",
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Layout />
+      </Suspense>
+    ),
+    children: [
+      {
+        path: "/", 
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Home />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/post_project",
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Post_project />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/project",
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Project_page />
+      </Suspense>
+    ),
+  },
+]);
