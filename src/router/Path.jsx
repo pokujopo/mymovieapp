@@ -1,4 +1,4 @@
-import { HashRouter as Router } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 //import Home from '../pages/Home.jsx'
 import Post_project from '../pages/Post_project.jsx';
 import Project_page from "../pages/Project_page";
