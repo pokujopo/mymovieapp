@@ -1,7 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
-import cover from '../assets/movie.png'
+import cover from '../assets/movie.jpg'
 
 function Home(){
     const [datas, setData]=useState([]);
