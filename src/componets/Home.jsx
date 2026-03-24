@@ -1,6 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
+import cover from '../assets/movie.png'
 
 function Home(){
     const [datas, setData]=useState([]);
@@ -69,7 +70,7 @@ function Home(){
               <div className="flex flex-col gap-1">
                    
                 <div className=" p-4 flex flex-col items-center justify-center gap-2">
-                    <img src="../src/assets/movie.jpg" className="w-[350px] shadow-lg h-[220px] mb-5 rounded-2xl" alt="cover.jpg" />
+                    <img src={cover} className="w-[350px] shadow-lg h-[220px] mb-5 rounded-2xl" alt="cover.jpg" />
                     <div className="mb-2">
                     <h1 className=" font-bold text-3xl uppercase">Search Movie</h1>
                     </div>
